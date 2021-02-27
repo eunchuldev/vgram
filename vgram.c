@@ -25,18 +25,24 @@
 
 PG_MODULE_MAGIC;
 
-Datum		print_qgrams(PG_FUNCTION_ARGS);
 Datum		get_vgrams(PG_FUNCTION_ARGS);
-Datum		qgram_stat_transfn(PG_FUNCTION_ARGS);
-Datum		qgram_stat_finalfn(PG_FUNCTION_ARGS);
-Datum		print_qgram_stat(PG_FUNCTION_ARGS);
-Datum		qgram_stat_reset_cache(PG_FUNCTION_ARGS);
-
 PG_FUNCTION_INFO_V1(get_vgrams);
+
+Datum		print_qgrams(PG_FUNCTION_ARGS);
 PG_FUNCTION_INFO_V1(print_qgrams);
-PG_FUNCTION_INFO_V1(qgram_stat_transfn);
+
+Datum		print_qgram_stat(PG_FUNCTION_ARGS);
+PG_FUNCTION_INFO_V1(print_qgram_stat);
+
+Datum		qgram_stat_finalfn(PG_FUNCTION_ARGS);
 PG_FUNCTION_INFO_V1(qgram_stat_finalfn);
+
+Datum		qgram_stat_reset_cache(PG_FUNCTION_ARGS);
 PG_FUNCTION_INFO_V1(qgram_stat_reset_cache);
+
+Datum		qgram_stat_transfn(PG_FUNCTION_ARGS);
+PG_FUNCTION_INFO_V1(qgram_stat_transfn);
+
 
 static int	qgramTableElementCmp(const void *a1, const void *a2);
 static int	qgram_key_match(const void *key1, const void *key2, Size keysize);
